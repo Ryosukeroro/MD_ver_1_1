@@ -1,0 +1,672 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR0102
+U 1 1 634B1736
+P 1675 1940
+F 0 "#PWR0102" H 1675 1690 50  0001 C CNN
+F 1 "GND" H 1680 1767 50  0000 C CNN
+F 2 "" H 1675 1940 50  0001 C CNN
+F 3 "" H 1675 1940 50  0001 C CNN
+	1    1675 1940
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4148 D1
+U 1 1 634C0B58
+P 2200 900
+F 0 "D1" H 2200 683 50  0000 C CNN
+F 1 "1N4148" H 2200 774 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2200 725 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 2200 900 50  0001 C CNN
+	1    2200 900 
+	-1   0    0    1   
+$EndComp
+Text GLabel 1354 1407 0    50   Input ~ 0
+PWM1
+$Comp
+L Device:C C2
+U 1 1 635FDE64
+P 2380 1403
+F 0 "C2" H 2495 1449 50  0000 L CNN
+F 1 "10u" H 2495 1358 50  0000 L CNN
+F 2 "Capacitor_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 2418 1253 50  0001 C CNN
+F 3 "~" H 2380 1403 50  0001 C CNN
+	1    2380 1403
+	1    0    0    -1  
+$EndComp
+$Comp
+L Nch_MOS_FET:Nch_MOS_FET Q2
+U 1 1 635F2C87
+P 3018 1209
+F 0 "Q2" H 3237 1318 50  0000 L CNN
+F 1 "Nch_MOS_FET" H 3237 1227 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-126-3_Vertical" H 3018 1209 50  0001 C CNN
+F 3 "" H 3018 1209 50  0001 C CNN
+	1    3018 1209
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2380 1553 2380 1607
+$Comp
+L Device:R R1
+U 1 1 6360E8DA
+P 2172 1936
+F 0 "R1" V 1965 1936 50  0000 C CNN
+F 1 "10" V 2056 1936 50  0000 C CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" V 2102 1936 50  0001 C CNN
+F 3 "~" H 2172 1936 50  0001 C CNN
+	1    2172 1936
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2322 1936 2593 1936
+$Comp
+L Nch_MOS_FET:Nch_MOS_FET Q3
+U 1 1 63641E1B
+P 3020 1936
+F 0 "Q3" H 3239 2006 50  0000 L CNN
+F 1 "Nch_MOS_FET" H 3239 1915 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-126-3_Vertical" H 3020 1936 50  0001 C CNN
+F 3 "" H 3020 1936 50  0001 C CNN
+	1    3020 1936
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 636439D6
+P 3058 2413
+F 0 "#PWR0104" H 3058 2163 50  0001 C CNN
+F 1 "GND" H 3063 2240 50  0000 C CNN
+F 2 "" H 3058 2413 50  0001 C CNN
+F 3 "" H 3058 2413 50  0001 C CNN
+	1    3058 2413
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3058 2086 3058 2372
+$Comp
+L Device:R R5
+U 1 1 63645627
+P 2593 2164
+F 0 "R5" H 2523 2118 50  0000 R CNN
+F 1 "10K" H 2523 2209 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2523 2164 50  0001 C CNN
+F 3 "~" H 2593 2164 50  0001 C CNN
+	1    2593 2164
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2593 2314 2593 2372
+Wire Wire Line
+	2593 2372 3058 2372
+Connection ~ 3058 2372
+Wire Wire Line
+	3058 2372 3058 2413
+Wire Wire Line
+	2593 2014 2593 1936
+Connection ~ 2593 1936
+Wire Wire Line
+	2593 1936 2871 1936
+Text GLabel 958  3517 0    50   Input ~ 0
+PWM2
+$Comp
+L Driver_FET:IR2302 U2
+U 1 1 6364A767
+P 1860 4839
+F 0 "U2" H 1860 5520 50  0000 C CNN
+F 1 "IR2302" H 1860 5429 50  0000 C CNN
+F 2 "IR2302:IR2302" H 1860 4839 50  0001 C CIN
+F 3 "https://www.infineon.com/dgdl/ir2302.pdf?fileId=5546d462533600a4015355c988b216de" H 1860 4839 50  0001 C CNN
+	1    1860 4839
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	958  3517 1560 3517
+Wire Wire Line
+	1560 3517 1560 4839
+Text GLabel 1530 4939 0    50   Input ~ 0
+SD2
+Wire Wire Line
+	1530 4939 1560 4939
+$Comp
+L power:GND #PWR0106
+U 1 1 63651ECF
+P 1860 5339
+F 0 "#PWR0106" H 1860 5089 50  0001 C CNN
+F 1 "GND" H 1865 5166 50  0000 C CNN
+F 2 "" H 1860 5339 50  0001 C CNN
+F 3 "" H 1860 5339 50  0001 C CNN
+	1    1860 5339
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2160 5039 2452 5039
+$Comp
+L Device:R R3
+U 1 1 63652E8F
+P 2462 5373
+F 0 "R3" V 2255 5373 50  0000 C CNN
+F 1 "10" V 2346 5373 50  0000 C CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" V 2392 5373 50  0001 C CNN
+F 3 "~" H 2462 5373 50  0001 C CNN
+	1    2462 5373
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 63656B38
+P 2643 4431
+F 0 "R4" V 2436 4431 50  0000 C CNN
+F 1 "10" V 2527 4431 50  0000 C CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" V 2573 4431 50  0001 C CNN
+F 3 "~" H 2643 4431 50  0001 C CNN
+	1    2643 4431
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2160 4639 2493 4639
+Wire Wire Line
+	2493 4639 2493 4431
+$Comp
+L Diode:1N4148 D2
+U 1 1 6365A227
+P 2179 4208
+F 0 "D2" H 2179 3991 50  0000 C CNN
+F 1 "1N4148" H 2179 4082 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2179 4033 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 2179 4208 50  0001 C CNN
+	1    2179 4208
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2160 4539 2329 4539
+Wire Wire Line
+	2329 4539 2329 4376
+Wire Wire Line
+	2029 4208 1860 4208
+Wire Wire Line
+	1860 4042 1860 4208
+Connection ~ 1860 4208
+Wire Wire Line
+	1860 4208 1860 4339
+$Comp
+L Nch_MOS_FET:Nch_MOS_FET Q1
+U 1 1 63685E47
+P 2938 5373
+F 0 "Q1" H 3157 5443 50  0000 L CNN
+F 1 "Nch_MOS_FET" H 3157 5352 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-126-3_Vertical" H 2938 5373 50  0001 C CNN
+F 3 "" H 2938 5373 50  0001 C CNN
+	1    2938 5373
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2160 5139 2160 5373
+Wire Wire Line
+	2160 5373 2312 5373
+Wire Wire Line
+	2612 5373 2707 5373
+$Comp
+L Device:R R6
+U 1 1 6369051C
+P 2707 5717
+F 0 "R6" H 2637 5671 50  0000 R CNN
+F 1 "10K" H 2637 5762 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2637 5717 50  0001 C CNN
+F 3 "~" H 2707 5717 50  0001 C CNN
+	1    2707 5717
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2707 5567 2707 5373
+Connection ~ 2707 5373
+Wire Wire Line
+	2707 5373 2789 5373
+$Comp
+L power:GND #PWR0107
+U 1 1 636926A1
+P 2976 5966
+F 0 "#PWR0107" H 2976 5716 50  0001 C CNN
+F 1 "GND" H 2981 5793 50  0000 C CNN
+F 2 "" H 2976 5966 50  0001 C CNN
+F 3 "" H 2976 5966 50  0001 C CNN
+	1    2976 5966
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2707 5908 2976 5908
+Connection ~ 2976 5908
+Wire Wire Line
+	2976 5908 2976 5966
+Wire Wire Line
+	2707 5867 2707 5908
+Wire Wire Line
+	2975 5225 2975 5039
+Connection ~ 2975 5039
+$Comp
+L Device:C C1
+U 1 1 63712996
+P 2452 4811
+F 0 "C1" H 2567 4857 50  0000 L CNN
+F 1 "10u" H 2567 4766 50  0000 L CNN
+F 2 "Capacitor_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 2490 4661 50  0001 C CNN
+F 3 "~" H 2452 4811 50  0001 C CNN
+	1    2452 4811
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2452 4961 2452 5039
+Connection ~ 2452 5039
+Wire Wire Line
+	2452 4661 2452 4376
+Wire Wire Line
+	2452 4376 2329 4376
+Connection ~ 2329 4376
+Wire Wire Line
+	2329 4376 2329 4208
+Wire Wire Line
+	2793 4431 2850 4431
+$Comp
+L Nch_MOS_FET:Nch_MOS_FET Q4
+U 1 1 63780FD2
+P 3026 4431
+F 0 "Q4" H 3245 4501 50  0000 L CNN
+F 1 "Nch_MOS_FET" H 3245 4410 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-126-3_Vertical" H 3026 4431 50  0001 C CNN
+F 3 "" H 3026 4431 50  0001 C CNN
+	1    3026 4431
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 6378CBB6
+P 2850 4799
+F 0 "R8" H 2920 4845 50  0000 L CNN
+F 1 "10K" H 2920 4754 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2780 4799 50  0001 C CNN
+F 3 "~" H 2850 4799 50  0001 C CNN
+	1    2850 4799
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2452 5039 2850 5039
+Wire Wire Line
+	2850 4949 2850 5039
+Connection ~ 2850 5039
+Wire Wire Line
+	2850 5039 2975 5039
+Wire Wire Line
+	2850 4649 2850 4431
+Connection ~ 2850 4431
+Wire Wire Line
+	2850 4431 2877 4431
+Wire Wire Line
+	2975 5039 2975 4581
+Wire Wire Line
+	2975 4581 3064 4581
+$Comp
+L Device:R R2
+U 1 1 634D7154
+P 2167 1207
+F 0 "R2" V 1960 1207 50  0000 C CNN
+F 1 "10" V 2051 1207 50  0000 C CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" V 2097 1207 50  0001 C CNN
+F 3 "~" H 2167 1207 50  0001 C CNN
+	1    2167 1207
+	0    1    1    0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 637F878A
+P 8710 1086
+F 0 "#FLG0101" H 8710 1161 50  0001 C CNN
+F 1 "PWR_FLAG" H 8710 1259 50  0000 C CNN
+F 2 "" H 8710 1086 50  0001 C CNN
+F 3 "~" H 8710 1086 50  0001 C CNN
+	1    8710 1086
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 637F9FAB
+P 8710 1132
+F 0 "#PWR0109" H 8710 882 50  0001 C CNN
+F 1 "GND" H 8715 959 50  0000 C CNN
+F 2 "" H 8710 1132 50  0001 C CNN
+F 3 "" H 8710 1132 50  0001 C CNN
+	1    8710 1132
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8710 1086 8710 1132
+Text GLabel 1675 645  1    50   Input ~ 0
+5V
+Text GLabel 1860 4042 1    50   Input ~ 0
+5V
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J1
+U 1 1 638CF9F9
+P 5951 1785
+F 0 "J1" H 6001 2102 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 6001 2011 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical" H 5951 1785 50  0001 C CNN
+F 3 "~" H 5951 1785 50  0001 C CNN
+	1    5951 1785
+	1    0    0    -1  
+$EndComp
+Text GLabel 5717 1685 0    50   Output ~ 0
+5V
+Text GLabel 5717 1785 0    50   Output ~ 0
+PWM1
+Text GLabel 5717 1885 0    50   Output ~ 0
+PWM2
+Text GLabel 6291 1685 2    50   Output ~ 0
+SD1
+Text GLabel 6291 1785 2    50   Output ~ 0
+SD2
+$Comp
+L power:GND #PWR0101
+U 1 1 638D0D73
+P 6298 1885
+F 0 "#PWR0101" H 6298 1635 50  0001 C CNN
+F 1 "GND" H 6303 1712 50  0000 C CNN
+F 2 "" H 6298 1885 50  0001 C CNN
+F 3 "" H 6298 1885 50  0001 C CNN
+	1    6298 1885
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5751 1785 5717 1785
+Wire Wire Line
+	5751 1885 5717 1885
+Wire Wire Line
+	6251 1685 6291 1685
+Wire Wire Line
+	6251 1785 6291 1785
+Wire Wire Line
+	6251 1885 6298 1885
+$Comp
+L XT60:XT60 V1
+U 1 1 638F63A2
+P 4787 3378
+F 0 "V1" H 5415 3668 50  0000 L CNN
+F 1 "XT60" H 5415 3577 50  0000 L CNN
+F 2 "Connector_AMASS:AMASS_XT60-M_1x02_P7.20mm_Vertical" H 4787 3378 50  0001 C CNN
+F 3 "" H 4787 3378 50  0001 C CNN
+	1    4787 3378
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3055 1061 3056 840 
+Wire Wire Line
+	3056 840  3800 840 
+$Comp
+L power:GND #PWR0103
+U 1 1 638F9D19
+P 5704 3006
+F 0 "#PWR0103" H 5704 2756 50  0001 C CNN
+F 1 "GND" H 5709 2833 50  0000 C CNN
+F 2 "" H 5704 3006 50  0001 C CNN
+F 3 "" H 5704 3006 50  0001 C CNN
+	1    5704 3006
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5176 2908 5176 2848
+Wire Wire Line
+	5176 2848 5704 2848
+Wire Wire Line
+	5704 2848 5704 3006
+Wire Wire Line
+	3063 4283 3063 4082
+Wire Wire Line
+	3063 2773 4932 2773
+Connection ~ 4932 2773
+Wire Wire Line
+	4932 2773 4932 2907
+Connection ~ 2380 1607
+Wire Wire Line
+	2641 1208 2869 1209
+Wire Wire Line
+	4446 1487 4446 1621
+Wire Wire Line
+	4691 4675 4690 1622
+$Comp
+L XT60:XT60 V2
+U 1 1 63999B82
+P 4301 2092
+F 0 "V2" V 4136 2335 50  0000 C CNN
+F 1 "XT60" V 4227 2335 50  0000 C CNN
+F 2 "Connector_AMASS:AMASS_XT60-F_1x02_P7.20mm_Vertical" H 4301 2092 50  0001 C CNN
+F 3 "" H 4301 2092 50  0001 C CNN
+	1    4301 2092
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3056 1359 3056 1607
+Connection ~ 3056 1607
+Wire Wire Line
+	3056 1607 3594 1607
+Wire Wire Line
+	3057 1788 3057 1607
+Wire Wire Line
+	3057 1607 3056 1607
+Wire Wire Line
+	4932 840  4932 2773
+Wire Wire Line
+	5751 1685 5736 1685
+Wire Wire Line
+	5736 1685 5717 1685
+Connection ~ 5736 1685
+Wire Wire Line
+	5736 1521 5736 1685
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 6391F30B
+P 5736 1521
+F 0 "#FLG0102" H 5736 1596 50  0001 C CNN
+F 1 "PWR_FLAG" H 5736 1694 50  0000 C CNN
+F 2 "" H 5736 1521 50  0001 C CNN
+F 3 "~" H 5736 1521 50  0001 C CNN
+	1    5736 1521
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 1050 3800 840 
+Connection ~ 3800 840 
+Wire Wire Line
+	3800 840  4932 840 
+Wire Wire Line
+	3800 1570 3594 1567
+Wire Wire Line
+	3594 1567 3594 1607
+Connection ~ 3594 1607
+Wire Wire Line
+	3798 1801 3798 1654
+Wire Wire Line
+	3798 1654 3594 1654
+Wire Wire Line
+	3594 1654 3594 1607
+Wire Wire Line
+	3798 2371 3058 2372
+Wire Wire Line
+	3846 4295 3846 4082
+Wire Wire Line
+	3846 4082 3063 4082
+Connection ~ 3063 4082
+Wire Wire Line
+	3063 4082 3063 2773
+Text GLabel 1341 1507 0    50   Input ~ 0
+SD1
+Wire Wire Line
+	2976 5523 2976 5847
+Wire Wire Line
+	3842 5539 3842 5847
+Wire Wire Line
+	3842 5847 2976 5847
+Connection ~ 2976 5847
+Wire Wire Line
+	2976 5847 2976 5908
+$Comp
+L Diode:1N4007 D4
+U 1 1 6465EDA8
+P 3800 1200
+F 0 "D4" H 3800 1417 50  0000 C CNN
+F 1 "1N4007" H 3800 1326 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3800 1025 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3800 1200 50  0001 C CNN
+	1    3800 1200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1975 1607 2380 1607
+Wire Wire Line
+	1675 1940 1675 1907
+Wire Wire Line
+	1341 1507 1375 1507
+Wire Wire Line
+	1354 1407 1375 1407
+$Comp
+L Diode:1N4007 D3
+U 1 1 646CA22C
+P 3798 1951
+F 0 "D3" H 3798 2168 50  0000 C CNN
+F 1 "1N4007" H 3798 2077 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3798 1776 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3798 1951 50  0001 C CNN
+	1    3798 1951
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3798 2101 3798 2371
+$Comp
+L Diode:1N4007 D6
+U 1 1 646EE6AC
+P 3846 4445
+F 0 "D6" H 3846 4662 50  0000 C CNN
+F 1 "1N4007" H 3846 4571 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3846 4270 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3846 4445 50  0001 C CNN
+	1    3846 4445
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4007 D5
+U 1 1 646F6B08
+P 3842 5389
+F 0 "D5" H 3842 5606 50  0000 C CNN
+F 1 "1N4007" H 3842 5515 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3842 5214 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3842 5389 50  0001 C CNN
+	1    3842 5389
+	0    1    1    0   
+$EndComp
+$Comp
+L Driver_FET:IR2302 U1
+U 1 1 64692699
+P 1675 1407
+F 0 "U1" H 1675 2088 50  0000 C CNN
+F 1 "IR2302" H 1675 1997 50  0000 C CNN
+F 2 "IR2302:IR2302" H 1675 1407 50  0001 C CIN
+F 3 "https://www.infineon.com/dgdl/ir2302.pdf?fileId=5546d462533600a4015355c988b216de" H 1675 1407 50  0001 C CNN
+	1    1675 1407
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1975 1707 1975 1936
+Wire Wire Line
+	1975 1936 2022 1936
+Wire Wire Line
+	1975 1207 2017 1207
+Wire Wire Line
+	2317 1207 2641 1207
+Wire Wire Line
+	2641 1207 2641 1208
+Connection ~ 2641 1208
+Wire Wire Line
+	2641 1208 2641 1448
+Wire Wire Line
+	2380 1607 2997 1607
+Wire Wire Line
+	2697 1448 2641 1448
+$Comp
+L Device:R R7
+U 1 1 63953F5A
+P 2847 1448
+F 0 "R7" V 2640 1448 50  0000 C CNN
+F 1 "10K" V 2731 1448 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2777 1448 50  0001 C CNN
+F 3 "~" H 2847 1448 50  0001 C CNN
+	1    2847 1448
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2997 1448 2997 1607
+Connection ~ 2997 1607
+Wire Wire Line
+	2997 1607 3056 1607
+Wire Wire Line
+	3064 4580 3064 4581
+Wire Wire Line
+	3064 4676 3846 4675
+Connection ~ 3064 4581
+Wire Wire Line
+	3064 4581 3064 4676
+Wire Wire Line
+	4691 4675 4691 4853
+Wire Wire Line
+	4691 4853 3846 4853
+Wire Wire Line
+	3846 4595 3846 4675
+Connection ~ 3846 4675
+Wire Wire Line
+	3846 4675 3846 4853
+Wire Wire Line
+	3842 5239 3842 4862
+Wire Wire Line
+	3842 4862 3846 4862
+Wire Wire Line
+	3846 4862 3846 4853
+Connection ~ 3846 4853
+Wire Wire Line
+	2050 900  2050 770 
+Wire Wire Line
+	1675 645  1675 770 
+Wire Wire Line
+	2050 770  1675 770 
+Connection ~ 1675 770 
+Wire Wire Line
+	1675 770  1675 907 
+Wire Wire Line
+	2350 900  2350 1041
+Wire Wire Line
+	1975 1107 2350 1107
+Wire Wire Line
+	2380 1041 2350 1041
+Wire Wire Line
+	2380 1041 2380 1253
+Connection ~ 2350 1041
+Wire Wire Line
+	2350 1041 2350 1107
+Wire Wire Line
+	4446 1487 3800 1487
+Wire Wire Line
+	3800 1350 3800 1487
+Connection ~ 3800 1487
+Wire Wire Line
+	3800 1487 3800 1570
+$EndSCHEMATC
